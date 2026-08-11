@@ -236,3 +236,34 @@ document.getElementById("calculateButton").addEventListener("click", () => {
     block: "start"
   });
 });
+
+// -----------------------------
+// リセット
+// -----------------------------
+
+document.getElementById("resetButton").addEventListener("click", () => {
+
+  // 数値入力を0に戻す
+  document.getElementById("appearance").value = 0;
+  document.getElementById("aroma").value = 0;
+  document.getElementById("taste").value = 0;
+  document.getElementById("other").value = 0;
+
+  // ○ / × の選択を解除
+  judgments.country = null;
+  judgments.vintage = null;
+  judgments.variety = null;
+
+  document.querySelectorAll(".judge-button").forEach(button => {
+    button.classList.remove("selected");
+  });
+
+  // 採点結果を非表示
+  document.getElementById("result").classList.add("hidden");
+
+  // 画面を上に戻す
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
