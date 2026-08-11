@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ワイン二次試験 練習採点ツール</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="container">
+
+    <header>
+      <h1>🍷 ワイン二次試験<br>練習採点ツール</h1>
+      <p class="subtitle">J.S.A.ソムリエ／ワインエキスパート対策</p>
+    </header>
+
+    <section class="card">
+      <h2>採点入力</h2>
+
+      <div class="input-group">
+        <label for="appearance">外観 <span>（0～8）</span></label>
+        <select id="appearance"></select>
+      </div>
+
+      <div class="input-group">
+        <label for="aroma">香り <span>（0～12）</span></label>
+        <select id="aroma"></select>
+      </div>
+
+      <div class="input-group">
+        <label for="taste">味わい <span>（0～7）</span></label>
+        <select id="taste"></select>
+      </div>
+
+      <div class="input-group">
+        <label for="other">その他 <span>（0～4）</span></label>
+        <select id="other"></select>
+      </div>
+
+      <div class="judge-group">
+        <h3>国</h3>
+        <div class="buttons" data-target="country">
+          <button type="button" class="judge-button" data-value="○">○</button>
+          <button type="button" class="judge-button" data-value="×">×</button>
+        </div>
+      </div>
+
+      <div class="judge-group">
+        <h3>収穫年</h3>
+        <div class="buttons" data-target="vintage">
+          <button type="button" class="judge-button" data-value="○">○</button>
+          <button type="button" class="judge-button" data-value="×">×</button>
+        </div>
+      </div>
+
+      <div class="judge-group">
+        <h3>品種</h3>
+        <div class="buttons" data-target="variety">
+          <button type="button" class="judge-button" data-value="○">○</button>
+          <button type="button" class="judge-button" data-value="×">×</button>
+        </div>
+      </div>
+
+      <button id="calculateButton" class="calculate-button">
+        採点する
+      </button>
+    </section>
+
+    <section id="result" class="card result-card hidden">
+      <h2>採点結果</h2>
+
+      <div id="resultDetails"></div>
+
+      <div class="total">
+        <div class="total-label">合計</div>
+        <div id="totalScore" class="total-score"></div>
+        <div class="total-max">/ 100.1点</div>
+      </div>
+
+      <div id="calculationCheck" class="calculation-check"></div>
+    </section>
+
+    <footer>
+      <p>※本ツールは個人の学習・練習を目的とした非公式ツールです。</p>
+      <p>※一般社団法人日本ソムリエ協会（J.S.A.）とは関係ありません。</p>
+      <p>※入力内容は外部に送信・保存されません。</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
